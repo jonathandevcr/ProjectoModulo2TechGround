@@ -1,0 +1,19 @@
+{
+  "name": "projectomodulo2techground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathandevcr/ProjectoModulo2TechGround.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathandevcr/ProjectoModulo2TechGround/issues"
+  },
+  "homepage": "https://github.com/jonathandevcr/ProjectoModulo2TechGround#readme"
+}
