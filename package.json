@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/jonathandevcr/ProjectoModulo2TechGround/issues"
   },
-  "homepage": "https://github.com/jonathandevcr/ProjectoModulo2TechGround#readme"
+  "homepage": "https://github.com/jonathandevcr/ProjectoModulo2TechGround#readme",
+  "devDependencies": {
+    "@wdio/cli": "^6.4.0",
+    "@wdio/local-runner": "^6.4.0",
+    "@wdio/mocha-framework": "^6.4.0",
+    "@wdio/spec-reporter": "^6.4.0",
+    "@wdio/sync": "^6.4.0",
+    "chromedriver": "^84.0.1",
+    "wdio-chromedriver-service": "^6.0.3"
+  }
 }
