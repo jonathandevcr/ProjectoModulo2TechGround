@@ -1,14 +1,13 @@
 const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
+const reservationPage = require('../pageobjects/reservation.page');
 
 describe('My Login application', () => {
     it('should login with valid credentials', () => {
-        LoginPage.open();
+        reservationPage.open();
 
-        LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        expect(SecurePage.flashAlert).toBeExisting();
-        expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+        browser.setTimeout({ 'pageLoad': 10000 });
+
     });
 });
 
