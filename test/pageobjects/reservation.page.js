@@ -1,6 +1,5 @@
 const Page = require("./page")
 
-
 class reservationPage extends Page {
     //Button Flights 
     get btnFlights () {return $('//html/body/div[2]/div[1]/div[1]/div[3]/div/div/div/div/div/nav/ul/li[2]/a')}
@@ -27,34 +26,15 @@ class reservationPage extends Page {
    
     get btnSearchFly () {return $('//*[@id="flights"]/div/div/form/div/div/div[3]/div[4]/button')}
 
-    //Button Flights 
-    getbtnFlights () {return this.btnFlights}
-
-    //Navigation through Fly From 
-    getsltFlyFrom () {return this.sltFlyFrom}
-    getinputFlyFrom () {return this.inputFlyFrom}
-    getsltDpFrlyFrom () {return this.sltDpFrlyFrom}
-
-    //Navigation through Fly To
-    getsltFlyTo () {return this.sltFlyTo}
-    getinputFlyTo () {return this.inputFlyTo}
-    getsltDpFlyTo () {return this.sltDpFlyTo}
-
-    //Navigation Depart
-    getsltDepart () {return this.sltDepart}    
-    getbtnNextMonth () {return this.btnNextMonth}
-    getbtnDay () {return this.btnDay}
-    
-    //Members Selection
-    getbtnAdults () {return this.btnAdults}
-    getbtnChilds () {return this.btnChilds}
-    getbtnInfants () {return this.btnInfants}
-
-    getbtnSearchFly () {return this.btnSearchFly}
-
     open () {
+        browser.maximizeWindow();
         return super.open('');
-    
+    }
+
+    selectFlightsOption(){
+
+        this.btnFlights.click();
+        browser.pause(5000);
     }
 
     addFlyFrom(flyFromValue) {
@@ -62,7 +42,6 @@ class reservationPage extends Page {
         this.inputFlyFrom.setValue(flyFromValue);
         this.sltDpFrlyFrom.click(); 
         browser.pause(2000);
-
     }
 
     addFlyTo(flyToValue) {
@@ -71,12 +50,42 @@ class reservationPage extends Page {
         this.sltDpFlyTo.click(); 
         browser.pause(2000);
     }
-
-        //reservationPage.getinputFlyFrom().setValue('SJO');
-      //  reservationPage.getsltDpFrlyFrom().click();
     
+    selectDepart() {
+
+      this.sltDepart.click();
+      this.btnNextMonth.click();
+      this.btnDay.click();
+      browser.pause(2000);
+    }
+
+    addAdults(){
+        for (var i = 0; i < 2; i++) {
+            this.btnAdults.click();
+         }
+         browser.pause(2000);
+    }
+
+    addChilds () {
+
+        for (var y = 0; y < 2; y++) {
+            this.btnChilds.click();
+         }
+         browser.pause(1000);
+    }
+
+    addInfants () {
+
+        this.btnInfants.click();
+        browser.pause(1000);
+    }
+
+    selectSearchFly() {
+
+        this.btnSearchFly.click();
+        browser.pause(3000);
+    }
 
 }
-
 module.exports = new reservationPage();
 

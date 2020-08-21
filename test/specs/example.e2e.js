@@ -1,40 +1,43 @@
 const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
 const reservationPage = require('../pageobjects/reservation.page');
+const reservationResults = require('../pageobjects/reservation.results.page');
 
-describe('Reservation Page Details', () => {
-    it('Should search a Flight ', () => {
+describe('Test Case 1 - Flight selection', () => {
+    it('Should search a Flight', () => {
         reservationPage.open();
         browser.setTimeout({ 'pageLoad': 10000 });
 
-        reservationPage.getbtnFlights().click();
-        browser.pause(5000);
-        
+        reservationPage.selectFlightsOption();
         reservationPage.addFlyFrom('SJO');
         reservationPage.addFlyTo('TXL');
+        reservationPage.selectDepart();
+        reservationPage.addAdults();
+        reservationPage.addChilds();
+        reservationPage.addInfants();
+        reservationPage.selectSearchFly();
+    });
 
-        reservationPage.getsltDepart().click();
-        reservationPage.getbtnNextMonth().click();
-        reservationPage.getbtnDay().click();
-        browser.pause(2000);
+    it('Should validate URL', () => {
+        browser.setTimeout({ 'implicit': 10000 });
+        expect(browser).toHaveUrl('https://www.phptravels.net/flights/search/SJO/TXL/oneway/economy/2020-09-23/3/2/1');
+    });
 
-        for (var i = 0; i < 2; i++) {
-            reservationPage.getbtnAdults().click();
-         }
-         browser.pause(2000);
+    it('Should validate there are Available Flights', () => {
+        
+        browser.setTimeout({ 'implicit': 10000 });
+        expect(reservationResults.getlblFlightResults()).toHaveTextContaining('Total listings found')
+    });
 
-        for (var y = 0; y < 2; y++) {
-            reservationPage.getbtnChilds().click();
-         }
-         browser.pause(2000);
-
-         reservationPage.getbtnInfants().click();
-         browser.pause(5000);
-
-         reservationPage.getbtnSearchFly().click();
-         browser.setTimeout({ 'pageLoad': 10000 });
+    it('Should validate the Flight points (From-To)', () => {
+        browser.setTimeout({ 'implicit': 10000 });
+        reservationResults.selectFlightResults();
+        expect(reservationResults.getlblFromResults()).toHaveText('SJO');
+        expect(reservationResults.getlblToResults()).toHaveText('TXL');
 
     });
+
+    
 });
 
 
