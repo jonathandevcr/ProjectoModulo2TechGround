@@ -19,7 +19,7 @@ class reservationPage extends Page {
     get btnNextMonth () {return $('//html/body/div[3]/div[9]/nav/div[3]')}
     get btnDay()  {return $('//html/body/div[3]/div[9]/div/div/div[2]/div[25]')}; 
     
-    //Members Selection
+    //Cats Selection
     get btnAdults () {return $('//html/body/div[2]/div[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div/div/form/div/div/div[3]/div[3]/div/div/div[1]/div/div[2]/div/span/button[1]')}
     get btnChilds () {return $('//html/body/div[2]/div[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div/div/form/div/div/div[3]/div[3]/div/div/div[2]/div/div[2]/div/span/button[1]')}
     get btnInfants () {return $('//html/body/div[2]/div[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div/div/form/div/div/div[3]/div[3]/div/div/div[3]/div/div[2]/div/span/button[1]')}

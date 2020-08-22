@@ -35,9 +35,7 @@ describe('Test Case 1 - Flight selection', () => {
         expect(reservationResults.getlblFromResults()).toHaveText('SJO');
         expect(reservationResults.getlblToResults()).toHaveText('TXL');
 
-    });
-
-    
+    });    
 });
 
 
