@@ -5,6 +5,7 @@ const bookingConfirmation = require ('../pageobjects/booking.confirmation')
 
 
 describe('Test Case 3 - Select Flight and Book a Flight', () => {
+
         reservationSelectBook.openBookPage();
         browser.setTimeout({ 'pageLoad': 5000 });
     
@@ -26,7 +27,7 @@ describe('Test Case 3 - Select Flight and Book a Flight', () => {
 
     });
 
-    it('Should validate pending payment', () => {
+    it('Should Validate Pending Payment', () => {
         
         expect(bookingConfirmation.getlblPaymentStatus()).toHaveText('Your booking status is Unpaid');
     });
@@ -34,6 +35,7 @@ describe('Test Case 3 - Select Flight and Book a Flight', () => {
     it('Should Validate URL', () => {
 
         expect(browser).toHaveUrlContaining('https://www.phptravels.net/invoice?id');
+
     });
 
 });

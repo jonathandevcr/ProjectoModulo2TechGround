@@ -10,8 +10,8 @@ describe('Test Case 2 - Flight Filters', () => {
 
     it('Should Validate Filter Page Results', () => {
         
-        browser.setTimeout({ 'implicit': 10000 });
-        expect(reservationFilters.getlblFilterResults()).toHaveTextContaining('Total listings found');
+        browser.setTimeout({ 'implicit': 2000 });
+        expect(reservationFilters.getliFilterResults()).toHaveChildren({ gte: 5 });
         
     });
 
@@ -21,17 +21,16 @@ describe('Test Case 2 - Flight Filters', () => {
 
     });
 
-    it('Should validate flight amount changed', () => {
+    it('Should Validate Flight Amount Changed', () => {
         
-     //   reservationFilters.getchbxAirlines();
-     //   browser.pause(5000);
+        expect(reservationFilters.getliFilterResults()).toHaveChildren({ eq: 1 });
 
     });
 
-    it('Should validate only Flights for the filter selected', () => {
+    it('Should Validate Only Flights For the Filter Selected', () => {
         
         reservationFilters.selectFlightResults();
-        expect(reservationFilters.getlblAirlines()).toHaveText('Ak Bars Aero');
+        expect(reservationFilters.getlblAirlines()).toHaveText('Star Peru');
         browser.pause(2000);
 
     });

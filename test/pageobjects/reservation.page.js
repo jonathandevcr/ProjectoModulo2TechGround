@@ -32,7 +32,7 @@ class reservationPage extends Page {
     }
 
     selectFlightsOption(){
-
+        browser.pause(5000);    
         this.btnFlights.click();
         browser.pause(5000);
     }

@@ -3,10 +3,10 @@ const SecurePage = require('../pageobjects/secure.page');
 const reservationPage = require('../pageobjects/reservation.page');
 const reservationResults = require('../pageobjects/reservation.results.page');
 
-describe('Test Case 1 - Flight selection', () => {
+describe('Test Case 1 - Flight Selection', () => {
     it('Should search a Flight', () => {
         reservationPage.open();
-        browser.setTimeout({ 'pageLoad': 10000 });
+        browser.setTimeout({'pageLoad': 10000});
 
         reservationPage.selectFlightsOption();
         reservationPage.addFlyFrom('SJO');
