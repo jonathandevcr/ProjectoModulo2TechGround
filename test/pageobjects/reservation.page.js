@@ -56,14 +56,14 @@ class reservationPage extends Page {
       this.sltDepart.click();
       this.btnNextMonth.click();
       this.btnDay.click();
-      browser.pause(2000);
+      browser.pause(1000);
     }
 
     addAdults(){
         for (var i = 0; i < 2; i++) {
             this.btnAdults.click();
          }
-         browser.pause(2000);
+         browser.pause(1000);
     }
 
     addChilds () {
@@ -83,7 +83,7 @@ class reservationPage extends Page {
     selectSearchFly() {
 
         this.btnSearchFly.click();
-        browser.pause(3000);
+        browser.pause(1000);
     }
 
 }

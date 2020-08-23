@@ -19,18 +19,19 @@ describe('Test Case 1 - Flight selection', () => {
     });
 
     it('Should validate URL', () => {
-        browser.setTimeout({ 'implicit': 10000 });
+        browser.setTimeout({ 'implicit': 5000 });
         expect(browser).toHaveUrl('https://www.phptravels.net/flights/search/SJO/TXL/oneway/economy/2020-09-23/3/2/1');
     });
 
     it('Should validate there are Available Flights', () => {
         
-        browser.setTimeout({ 'implicit': 10000 });
-        expect(reservationResults.getlblFlightResults()).toHaveTextContaining('Total listings found')
+        browser.setTimeout({ 'implicit': 2000 });
+        expect(reservationResults.getliFlightResults()).toHaveChildren({ gte: 1 });
+    
     });
 
     it('Should validate the Flight points (From-To)', () => {
-        browser.setTimeout({ 'implicit': 10000 });
+        browser.setTimeout({ 'implicit': 2000 });
         reservationResults.selectFlightResults();
         expect(reservationResults.getlblFromResults()).toHaveText('SJO');
         expect(reservationResults.getlblToResults()).toHaveText('TXL');

@@ -31,7 +31,7 @@ describe('Test Case 2 - Flight Filters', () => {
     it('Should validate only Flights for the filter selected', () => {
         
         reservationFilters.selectFlightResults();
-        expect(reservationFilters.getlblAirlines()).toHaveText('Moldavian Airlines');
+        expect(reservationFilters.getlblAirlines()).toHaveText('Ak Bars Aero');
         browser.pause(2000);
 
     });
