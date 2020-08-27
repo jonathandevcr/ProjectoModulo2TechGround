@@ -1,4 +1,3 @@
-const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
 const reservationPage = require('../pageobjects/reservation.page');
 const reservationResults = require('../pageobjects/reservation.results.page');
