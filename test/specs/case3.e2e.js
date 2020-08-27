@@ -13,6 +13,7 @@ describe('Test Case 3 - Select Flight and Book a Flight', () => {
         
         browser.setTimeout({ 'implicit': 10000 });
         reservationSelectBook.getbtnBookFlight();
+        browser.pause(10000); 
 
     });
 
@@ -27,15 +28,16 @@ describe('Test Case 3 - Select Flight and Book a Flight', () => {
 
     });
 
-    it('Should Validate Pending Payment', () => {
-        
+    it('Should Validate Pending Payment', () => 
+    {
+        browser.pause(10000);
         expect(bookingConfirmation.getlblPaymentStatus()).toHaveText('Your booking status is Unpaid');
     });
 
     it('Should Validate URL', () => {
 
         expect(browser).toHaveUrlContaining('https://www.phptravels.net/invoice?id');
-
+        browser.pause(10000);
     });
 
 });

@@ -52,7 +52,7 @@ class reservationBook extends Page {
     }
 
     getbtnBookConfirmation() {
-        browser.pause(2000);
+        browser.pause(5000);
         this.btnConfirmBook.click();
     }
 

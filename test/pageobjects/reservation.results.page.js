@@ -17,7 +17,7 @@ class reservationResults extends Page {
     selectFlightResults(){
 
         this.sltFlightResults.click();
-        browser.pause(1000);
+        browser.pause(5000);
     }
 
     getlblFromResults() {
